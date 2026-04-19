@@ -3,118 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ISOMETRIC | Premium Strength Engineering</title>
+    <title>ISOMETRIC | Official Store</title>
     <style>
         :root {
-            --gold: #d4af37;
-            --blue: #007bff;
-            --dark-bg: #050505;
-            --glass: rgba(255, 255, 255, 0.05);
+            --brand-blue: #0071e3;
+            --surface: #ffffff;
+            --text-dark: #1d1d1f;
+            --text-light: #86868b;
         }
 
         body {
             margin: 0;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            background-color: var(--dark-bg);
-            color: white;
-            overflow-x: hidden;
+            font-family: 'SF Pro Display', -apple-system, sans-serif;
+            background-color: var(--surface);
+            color: var(--text-dark);
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Luxury Navigation */
+        /* Clean Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 60px;
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
+            padding: 15px 10%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
             z-index: 1000;
-            box-sizing: border-box;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid #d2d2d7;
         }
 
-        .logo {
-            font-weight: 900;
-            font-size: 1.5rem;
-            letter-spacing: 4px;
-            color: #fff;
-        }
+        .logo { font-weight: 700; font-size: 1.2rem; letter-spacing: -0.5px; }
 
-        .nav-links a {
-            color: #aaa;
+        .links a {
             text-decoration: none;
+            color: var(--text-dark);
             margin-left: 30px;
             font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: 0.3s;
+            font-weight: 400;
         }
 
-        .nav-links a:hover { color: var(--blue); }
-
-        /* Modern Hero Section */
-        header {
-            height: 100vh;
-            background: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0,0,0,0.2)), url('gym-hero.jpg');
+        /* Hero Spotlight */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('gym-hero.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            padding: 0 80px;
-        }
-
-        .hero-text { max-width: 600px; }
-        h1 { font-size: 4.5rem; margin: 0; line-height: 1; }
-        h1 span { color: var(--blue); }
-        p { font-size: 1.2rem; color: #888; margin: 20px 0 40px; }
-
-        .search-bar {
-            background: var(--glass);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 15px 25px;
-            border-radius: 50px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-        }
-
-        .search-bar input {
-            background: transparent;
-            border: none;
+            text-align: center;
             color: white;
-            width: 100%;
-            padding-left: 10px;
-            outline: none;
         }
 
-        /* Product Categories Grid */
-        .grid-section { padding: 80px; }
+        .hero h1 { font-size: 4rem; margin: 0; font-weight: 700; }
+        .hero p { font-size: 1.5rem; margin: 10px 0 30px; }
+
+        .cta-btn {
+            background-color: var(--brand-blue);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        /* Product Categories (Like TechnoGym) */
+        .section-padding { padding: 80px 10%; }
+        
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
         }
 
-        .card {
-            background: #111;
-            border: 1px solid #222;
+        .product-card {
+            background: #f5f5f7;
+            border-radius: 18px;
             padding: 40px;
-            border-radius: 15px;
-            transition: 0.4s;
-            cursor: pointer;
+            transition: transform 0.3s ease;
             text-align: center;
+            text-decoration: none;
+            color: var(--text-dark);
         }
 
-        .card:hover {
-            border-color: var(--blue);
-            transform: translateY(-10px);
-            background: #161616;
-        }
+        .product-card:hover { transform: scale(1.02); }
+        .product-card h3 { margin: 20px 0 10px; font-size: 1.5rem; }
+        .product-card p { color: var(--text-light); }
 
-        .card h3 { margin-bottom: 10px; font-size: 1.5rem; }
-        .card p { font-size: 0.9rem; margin-bottom: 0; }
+        /* Goal Selection */
+        .goals { display: flex; justify-content: center; gap: 40px; margin-top: 20px; }
+        .goal-item { text-align: center; font-size: 0.9rem; color: var(--brand-blue); cursor: pointer; }
 
     </style>
 </head>
@@ -122,41 +105,42 @@
 
     <nav>
         <div class="logo">ISOMETRIC</div>
-        <div class="nav-links">
-            <a href="#">Showroom</a>
-            <a href="#">Engineering</a>
-            <a href="#">Partnerships</a>
-            <a href="#" style="color: var(--blue); border: 1px solid var(--blue); padding: 8px 20px; border-radius: 5px;">Configure Gear</a>
+        <div class="links">
+            <a href="#">Products</a>
+            <a href="#">Solutions</a>
+            <a href="#">Support</a>
+            <a href="#" style="background: #000; color: #fff; padding: 8px 15px; border-radius: 20px;">Contact Sales</a>
         </div>
     </nav>
 
-    <header>
-        <div class="hero-text">
-            <h1>UNRIVALED <span>PRECISION.</span></h1>
-            <p>The world's most advanced strength training systems, engineered for those who demand perfection.</p>
-            
-            <div class="search-bar">
-                <span style="color:var(--blue)">🔍</span>
-                <input type="text" placeholder="Explore our 2026 Collection (Racks, Plates, Tech)...">
-            </div>
-        </div>
+    <header class="hero">
+        <h1>UNLEASH YOUR POTENTIAL</h1>
+        <p>Industrial performance for your home and facility.</p>
+        <a href="#" class="cta-btn">Discover the 2026 Collection</a>
     </header>
 
-    <section class="grid-section">
-        <h2 style="margin-bottom: 40px; letter-spacing: 2px;">BROWSE COLLECTIONS</h2>
+    <section class="section-padding">
+        <h2 style="text-align: center; font-size: 2.5rem;">Shop by Goal</h2>
+        <div class="goals">
+            <div class="goal-item">● Lose Weight</div>
+            <div class="goal-item">● Build Muscle</div>
+            <div class="goal-item">● Improve Performance</div>
+            <div class="goal-item">● Health & Wellness</div>
+        </div>
+
         <div class="grid">
-            <div class="card">
-                <h3>Elite Racks</h3>
-                <p>Industrial grade stability with modular attachments.</p>
-            </div>
-            <div class="card">
-                <h3>Smart Plates</h3>
-                <p>Precision-calibrated steel with integrated tracking.</p>
-            </div>
-            <div class="card">
-                <h3>Custom Builds</h3>
-                <p>Tailored engineering for world-class facilities.</p>
-            </div>
+            <a href="#" class="product-card">
+                <h3>Strength</h3>
+                <p>Weight stations, benches, and racks.</p>
+            </a>
+            <a href="#" class="product-card">
+                <h3>Functional</h3>
+                <p>Training tools for natural movement.</p>
+            </a>
+            <a href="#" class="product-card">
+                <h3>Digital Tech</h3>
+                <p>Integrated performance tracking software.</p>
+            </a>
         </div>
     </section>
 
