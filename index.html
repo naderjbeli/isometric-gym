@@ -3,198 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isometric Tech Gym | Tunisia</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>Isometric Tech Gym | Executive Portal</title>
     <style>
-        :root {
-            --primary-blue: #132e4d; /* Updated to match image_2.png */
-            --accent-silver: #a0a6b5;
-            --text-dark: #2c3e50;
-            --bg-light: #ffffff;
-            --hover-blue: #225186;
-        }
-        
+        /* ALL CSS IS NOW INSIDE THIS BLOCK */
         body {
-            font-family: 'Montserrat', sans-serif;
             margin: 0;
-            background: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.6;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0a0e14;
+            color: white;
+            overflow-x: hidden;
         }
-        
-        /* Navigation Bar */
+
         nav {
-            background: rgba(255, 255, 255, 0.98);
-            padding: 15px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            position: fixed;
-            top: 0;
-            width: calc(100% - 100px);
-            z-index: 1000;
-        }
-        
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo-container img {
-            height: 50px; /* Standard size for navbar logo */
-            margin-right: 15px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: var(--primary-blue);
-            margin-left: 25px;
-            font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: var(--accent-silver);
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.9);
+            border-bottom: 2px solid #007bff;
         }
 
-        /* Hero Section */
-        .hero {
-            height: 550px;
-            background: linear-gradient(rgba(19, 46, 77, 0.7), rgba(19, 46, 77, 0.8)), url('https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&q=80&w=1200');
+        .logo {
+            font-weight: 800;
+            font-size: 24px;
+            color: #007bff;
+            letter-spacing: 1px;
+        }
+
+        ul { 
+            display: flex; 
+            list-style: none; 
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li { margin-left: 30px; }
+
+        ul li a { 
+            color: white; 
+            text-decoration: none; 
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        ul li a:hover { color: #007bff; }
+
+        header {
+            height: 90vh;
+            /* This links to your equipment photo */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('gym-hero.jpg');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
-            padding: 0 50px;
-            margin-top: 80px; /* Space for the fixed navbar */
         }
-        
-        .hero-content h1 {
-            font-size: 48px;
-            max-width: 900px;
-            font-weight: 800;
-            line-height: 1.2;
+
+        .hero-content { max-width: 800px; padding: 20px; }
+
+        h1 { 
+            font-size: 4rem; 
+            margin-bottom: 10px; 
             text-transform: uppercase;
             letter-spacing: 2px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
-        /* Info Section with Icons */
-        .info-bar {
-            display: flex;
-            justify-content: space-around;
-            padding: 80px 50px;
-            background: #fbfbfb;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .item {
-            text-align: center;
-            flex: 1;
-            padding: 20px 30px;
-            border-right: 1px solid #eee;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .item:last-child {
-            border-right: none;
-        }
-        
-        .item:hover {
-            transform: translateY(-5px);
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border-radius: 8px;
-        }
-        
-        .item .icon {
-            font-size: 40px;
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-        }
-        
-        .item h3 {
-            color: var(--primary-blue);
-            font-size: 18px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .item p {
-            font-size: 15px;
-            color: #7f8c8d;
-            margin: 0;
+        p { 
+            font-size: 1.4rem; 
+            color: #bdc3c7; 
+            margin-bottom: 40px; 
+            line-height: 1.6;
         }
 
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 30px;
-            background: var(--primary-blue);
+        .btn {
+            padding: 18px 40px;
+            background-color: #007bff;
             color: white;
-            font-size: 14px;
-            letter-spacing: 1px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            transition: 0.3s;
         }
-        
-        footer .footer-logo img {
-            height: 40px;
-            margin-bottom: 15px;
+
+        .btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo-container">
-            <img src="https://image.spreadshirtmedia.net/image-server/v1/mp/products/T812A2MPA3132PT17X18Y62D157448373FS1491/views/1,width=1200,height=1200,appearanceId=2,backgroundColor=F2F2F2/geometric-engineering-gym-fitness-muscle-bodybuilding-logo.jpg" alt="Isometric Tech Gym Logo">
-        </div>
-        <div class="nav-links">
-            <a href="#">HOME</a>
-            <a href="#">PRODUCTS</a>
-            <a href="#">OUR STORY</a>
-            <a href="#">AFRICA 2026</a>
-        </div>
+        <div class="logo">ISOMETRIC TECH GYM</div>
+        <ul>
+            <li><a href="#">Market Analysis</a></li>
+            <li><a href="#">Cost Strategy</a></li>
+            <li><a href="#">Supply Chain</a></li>
+        </ul>
     </nav>
 
-    <section class="hero">
+    <header>
         <div class="hero-content">
-            <h1>TUNISIA'S LEADER IN<br>HIGH-QUALITY FITNESS ENGINEERING</h1>
+            <h1>Engineering Peak Performance</h1>
+            <p>Innovative Strength Solutions & Industrial Optimization.<br>
+            Addressing the 2026 Strategic Deficit.</p>
+            <button class="btn">Access Board Report</button>
         </div>
-    </section>
-
-    <section class="info-bar">
-        <div class="item">
-            <div class="icon">🏭</div>
-            <h3>LOCAL MANUFACTURING</h3>
-            <p>Ben Arous Headquarters</p>
-        </div>
-        <div class="item">
-            <div class="icon">🛡️</div>
-            <h3>PROVEN RELIABILITY</h3>
-            <p>Built to Last</p>
-        </div>
-        <div class="item">
-            <div class="icon">🌍</div>
-            <h3>REGIONAL AMBITION</h3>
-            <p>Expanding Across Africa</p>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-logo">
-            <img src="https://image.spreadshirtmedia.net/image-server/v1/mp/products/T812A2MPA3132PT17X18Y62D157448373FS1491/views/1,width=1200,height=1200,appearanceId=2,backgroundColor=F2F2F2/geometric-engineering-gym-fitness-muscle-bodybuilding-logo.jpg" alt="Isometric Tech Gym Logo">
-        </div>
-        Isometric Tech Gym &copy; 2026 | Ben Arous, Tunisia
-    </footer>
+    </header>
 
 </body>
 </html>
